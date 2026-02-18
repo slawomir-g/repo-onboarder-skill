@@ -31,4 +31,10 @@ IMPORTANT:
 - Prioritize high-impact issues.
   $LANGUAGE_INSTRUCTION$
 
-{{instruction}}
+## Output Requirements
+
+After completing your analysis, create the quality assessment report in **pure markdown format**. Your markdown output should follow this structure:
+
+```markdown
+$DOCUMENTATION_TEMPLATE$
+```

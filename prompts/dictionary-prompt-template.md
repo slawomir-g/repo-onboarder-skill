@@ -1,9 +1,5 @@
 You will be analyzing a code repository to create a comprehensive **Domain Dictionary (Glossary)**. Your goal is to extract key domain terms, concepts, and business entities found in the code and explain them clearly.
 
-Here is the repository content you need to analyze:
-
-$REPOSITORY_CONTEXT_PAYLOAD_PLACEHOLDER$
-
 Your task is to identify and define the specific vocabulary used in this application's domain.
 
 ### Guidelines for Extraction

@@ -2,17 +2,17 @@
 name: repo-onboarder
 description: Analyze codebases using specialized architectural lenses (DDD, Quality, Refactoring) based on repo-onboarder-mcp logic.
 homepage: https://github.com/slawomir-g/repo-onboarder-mcp
-metadata: {"clawdbot":{"emoji":"🔍","requires":{"bins":["find"]}}}
+metadata: { "clawdbot": { "emoji": "🔍", "requires": { "bins": ["find"] } } }
 ---
 
 # Repo Onboarder Skill
 
 Analyze codebases using specialized architectural lenses (DDD, Quality, Refactoring) directly with native tools (`read`, `find`, `exec`).
-Based on [repo-onboarder-mcp](https://github.com/slawomir-g/repo-onboarder-mcp).
 
 ## Capabilities
 
 When asked to "analyze code", "perform DDD analysis", "assess quality", or "extract domain dictionary":
+
 1.  **Select the Analysis Type:**
     - `ddd`: Domain-Driven Design (Strategic & Tactical patterns).
     - `quality`: Quality Assessment (SOLID, Clean Code).
@@ -20,21 +20,27 @@ When asked to "analyze code", "perform DDD analysis", "assess quality", or "extr
     - `dictionary`: Ubiquitous Language / Dictionary.
     - `readme`: Generate documentation.
     - `ai-context`: AI-optimized context summary.
+    - `judge`: Validation of generated documentation against repository context.
 
 2.  **Load the Procedure (Prompt Template):**
     - Read the `prompts/<type>-prompt-template.md` file from the skill directory.
     - Read the `prompts/<type>-documentation-template.md` file (if applicable).
-    - *Adopt the persona* and *follow the analysis steps* defined in the prompt.
+    - _Adopt the persona_ and _follow the analysis steps_ defined in the prompt.
 
 3.  **Explore the Target Files:**
-    - Use `exec find <path> -maxdepth <depth> ...` to list relevant source files (default depth: 3).
+    - Use `exec find <path> -maxdepth <depth> ...` to list relevant source files (default depth: 5).
     - Use `read` to load the content of the most relevant files (limit: ~20 files or as needed).
-    - *Do not* dump the entire repository unless explicitly asked. Be selective.
+    - _Do not_ dump the entire repository unless explicitly asked. Be selective.
 
 4.  **Execute the Analysis:**
     - Mentally apply the prompt's instructions to the file contents you just read.
     - Perform the step-by-step reasoning (e.g., Domain Discovery, Strategic Analysis).
     - Construct the final output using the provided documentation template.
+
+5.  **Save the Output:**
+    - Save generated documentation to the `docs/` directory in the target project.
+    - Naming convention: `docs/<type>-analysis.md` (e.g., `docs/ddd-analysis.md`, `docs/quality-analysis.md`).
+    - Create the `docs/` directory if it does not exist.
 
 ## Example Interactions
 
