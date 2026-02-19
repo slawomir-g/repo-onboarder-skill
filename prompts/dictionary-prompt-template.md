@@ -79,6 +79,5 @@ $DOCUMENTATION_TEMPLATE$
 - **Ground definitions in context** — explain what a term means in the project and its domain, not just what the code does with it.
 - Include terms from all categories (domain, architectural, project-specific, acronyms), not just business entities.
 - If the domain or meaning of a term is unclear, state your assumptions.
-  $LANGUAGE_INSTRUCTION$
 
 Begin your analysis now.

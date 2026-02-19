@@ -45,6 +45,10 @@ When asked to "analyze repository", "onboard codebase", or "generate documentati
     - Naming convention for `docs/`: `docs/<type>-analysis.md` (e.g., `docs/ddd-analysis.md`, `docs/quality-analysis.md`).
     - Create the `docs/` directory if it does not exist.
 
+6.  **Download Tech Stack Instructions (after all lenses):**
+    - Read the `prompts/instructions-prompt-template.md` file from the skill directory and follow its procedure.
+    - This step reads the generated `AGENTS.md` to identify the tech stack, then downloads community-maintained instruction files from [awesome-copilot](https://github.com/github/awesome-copilot/tree/main/instructions) into `.github/instructions/`.
+
 ## Example Interactions
 
 > "Analyze the `src/modules/orders` directory using the DDD lens."
