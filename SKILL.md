@@ -11,16 +11,19 @@ Analyze codebases using specialized architectural lenses (DDD, Quality, Refactor
 
 ## Capabilities
 
-When asked to "analyze code", "perform DDD analysis", "assess quality", or "extract domain dictionary":
+When asked to "analyze repository", "onboard codebase", or "generate documentation":
 
-1.  **Select the Analysis Type:**
-    - `ddd`: Domain-Driven Design (Strategic & Tactical patterns).
-    - `quality`: Quality Assessment (SOLID, Clean Code).
-    - `refactoring`: Refactoring suggestions.
-    - `dictionary`: Ubiquitous Language / Dictionary.
-    - `readme`: Generate documentation.
-    - `ai-context`: AI-optimized context summary.
-    - `judge`: Validation of generated documentation against repository context.
+1.  **Execute All Analysis Lenses Step by Step:**
+    Run each analysis type sequentially, completing one before starting the next. The execution order is:
+    1. `ai-context`: AI-optimized context summary.
+    2. `ddd`: Domain-Driven Design (Strategic & Tactical patterns).
+    3. `dictionary`: Ubiquitous Language / Dictionary.
+    4. `quality`: Quality Assessment (SOLID, Clean Code).
+    5. `refactoring`: Refactoring suggestions.
+    6. `readme`: Generate documentation.
+    7. `judge`: Validation of generated documentation against repository context.
+
+    For each lens, complete steps 2–5 fully before proceeding to the next lens.
 
 2.  **Load the Procedure (Prompt Template):**
     - Read the `prompts/<type>-prompt-template.md` file from the skill directory.
