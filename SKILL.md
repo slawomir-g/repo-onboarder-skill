@@ -1,8 +1,7 @@
 ---
-name: repo-onboarder
-description: Analyze codebases using specialized architectural lenses (DDD, Quality, Refactoring) based on repo-onboarder-mcp logic.
-homepage: https://github.com/slawomir-g/repo-onboarder-mcp
-metadata: { "clawdbot": { "emoji": "🔍", "requires": { "bins": ["find"] } } }
+name: repo-onboarder-skill
+description: Comprehensive codebase onboarding — generates AGENTS.md, DDD analysis, domain dictionary, quality assessment, refactoring suggestions, README, and validation documentation.
+homepage: https://github.com/slawomir-g/repo-onboarder-skill
 ---
 
 # Repo Onboarder Skill
@@ -15,7 +14,7 @@ When asked to "analyze repository", "onboard codebase", or "generate documentati
 
 1.  **Execute All Analysis Lenses Step by Step:**
     Run each analysis type sequentially, completing one before starting the next. The execution order is:
-    1. `ai-context`: AI-optimized context summary.
+    1. `agents-md`: Generates `AGENTS.md` — the standard instruction file for AI coding assistants.
     2. `ddd`: Domain-Driven Design (Strategic & Tactical patterns).
     3. `dictionary`: Ubiquitous Language / Dictionary.
     4. `quality`: Quality Assessment (SOLID, Clean Code).
@@ -31,8 +30,8 @@ When asked to "analyze repository", "onboard codebase", or "generate documentati
     - _Adopt the persona_ and _follow the analysis steps_ defined in the prompt.
 
 3.  **Explore the Target Files:**
-    - Use `exec find <path> -maxdepth <depth> ...` to list relevant source files (default depth: 5).
-    - Use `read` to load the content of the most relevant files (limit: ~20 files or as needed).
+    - Use the agent's native file discovery tools (e.g., `list_dir`, `find_by_name`, `grep_search`) to list relevant source files.
+    - Read the content of the most relevant files (limit: ~20 files or as needed).
     - _Do not_ dump the entire repository unless explicitly asked. Be selective.
 
 4.  **Execute the Analysis:**
@@ -41,8 +40,9 @@ When asked to "analyze repository", "onboard codebase", or "generate documentati
     - Construct the final output using the provided documentation template.
 
 5.  **Save the Output:**
-    - Save generated documentation to the `docs/` directory in the target project.
-    - Naming convention: `docs/<type>-analysis.md` (e.g., `docs/ddd-analysis.md`, `docs/quality-analysis.md`).
+    - **`agents-md` lens**: Save the output as `AGENTS.md` in the **root** of the target project (not in `docs/`).
+    - **All other lenses**: Save generated documentation to the `docs/` directory in the target project.
+    - Naming convention for `docs/`: `docs/<type>-analysis.md` (e.g., `docs/ddd-analysis.md`, `docs/quality-analysis.md`).
     - Create the `docs/` directory if it does not exist.
 
 ## Example Interactions
