@@ -8,9 +8,9 @@
 
 ### [Category or Module Name]
 
-| Term   | Definition                                                 | Context                                             | Code Reference                                     |
-| ------ | ---------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------- |
-| [Term] | [Clear definition of what this term means in this project] | [Broader domain or industry context, if applicable] | [Class, package, or file where this concept lives] |
+| Term   | Plain-English Explanation                   | Project Meaning             | Why It Matters                                     | Example / Mental Model                       | Related Terms               | Code References             |
+| ------ | ------------------------------------------- | --------------------------- | -------------------------------------------------- | -------------------------------------------- | --------------------------- | --------------------------- |
+| [Term] | [Explain in simple language. 3-6 sentences] | [How this project uses it.] | [Why understanding it is important. 3-6 sentences] | [Concrete example or analogy. 3-6 sentences] | [Connected glossary terms.] | [Where it appears in code.] |
 
 ## Key Relationships
 

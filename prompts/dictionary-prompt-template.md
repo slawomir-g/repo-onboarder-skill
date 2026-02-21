@@ -35,13 +35,13 @@ This knowledge serves as context for writing clear, grounded definitions in late
 
 Systematically scan the codebase for all terms that might be unfamiliar or ambiguous to a newcomer. Look across these categories:
 
-- **Domain terms** — business concepts, entities, processes specific to the project's problem space
-- **Architectural terms** — patterns, layers, modules used in this specific project (e.g., "Gateway", "Saga", "Projection")
-- **Project-specific conventions** — custom naming patterns, abbreviations, or idioms unique to this codebase
-- **Acronyms and abbreviations** — any non-obvious shortened forms used in code or docs
-- **Statuses, types, and enums** — domain-meaningful values (e.g., `PENDING_REVIEW`, `TIER_GOLD`)
-- **API and integration terms** — external services, protocols, data formats referenced in the project
-- **Configuration and infrastructure terms** — environment variables, feature flags, deployment concepts
+- **Domain terms** - business concepts, entities, processes specific to the project's problem space
+- **Architectural terms** - patterns, layers, modules used in this specific project (e.g., "Gateway", "Saga", "Projection")
+- **Project-specific conventions** - custom naming patterns, abbreviations, or idioms unique to this codebase
+- **Acronyms and abbreviations** - any non-obvious shortened forms used in code or docs
+- **Statuses, types, and enums** - domain-meaningful values (e.g., `PENDING_REVIEW`, `TIER_GOLD`)
+- **API and integration terms** - external services, protocols, data formats referenced in the project
+- **Configuration and infrastructure terms** - environment variables, feature flags, deployment concepts
 
 For each term, note where it appears and how it is used.
 
@@ -54,6 +54,14 @@ For each extracted term, write a definition that:
 - Notes **relationships** to other terms in the glossary
 - References **where in the code** the concept is primarily defined or used
 
+Use the following writing style for every term:
+
+- Start with a **plain-English explanation first**, as if teaching a newcomer with no domain background
+- Make each definition **substantive and intuitive** (target: ~3-6 sentences per term)
+- Include at least one **concrete mental model or example scenario** where possible (e.g., "Think of this as...")
+- Explain **why the term matters** in the project's workflow, calculations, or architecture
+- Avoid terse dictionary-style one-liners unless the term is truly trivial
+
 ### Step 5: Consistency Check
 
 Review the code for potential points of confusion:
@@ -62,7 +70,7 @@ Review the code for potential points of confusion:
 - Are there concepts named differently across different parts of the codebase?
 - Are there implicit assumptions or "tribal knowledge" that should be made explicit?
 
-It's OK for the analysis section to be quite long — thoroughness is more important than brevity here.
+It's OK for the analysis section to be quite long - thoroughness is more important than brevity here.
 
 ## Output Requirements
 
