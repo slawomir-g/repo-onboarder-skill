@@ -125,7 +125,6 @@ You must follow these rules strictly:
 - If information is unavailable or cannot be determined from the data provided, state that explicitly rather than guessing
 - When documenting coding style and design patterns, cite specific examples from the source code when possible
 
-
 ## Output Requirements
 
 After completing your analysis in the thinking block, generate the AGENTS.md file in Markdown format. The output must be:
@@ -147,3 +146,18 @@ After completing your analysis in the thinking block, generate the AGENTS.md fil
 # Use the following documentation template as the required structure for your final output, DO NOT include any aditional comments or thinking process, ONLY CORRECTLY FORMATTED MARKDOWN FILE AS TEMPLATE BELOW:
 
 $DOCUMENTATION_TEMPLATE$
+
+## Update Mode
+
+When an existing document is provided alongside this prompt, you are in **update mode**. Instead of generating the document from scratch:
+
+1. **Read the existing document** carefully, section by section.
+2. **Compare each section** against the current state of the codebase you just analyzed.
+3. **For each section**:
+   - If the content is **still accurate** → preserve it as-is.
+   - If the content is **outdated or incomplete** → rewrite it with up-to-date information.
+   - If the section is **missing entirely** from the existing document → add it following the documentation template.
+   - If the existing document has **extra sections** not in the template → preserve them at the end of the document.
+4. **Output the complete, merged document** — not a diff or patch, but the full updated file.
+
+If no existing document is provided, proceed normally and generate the document from scratch using the template.

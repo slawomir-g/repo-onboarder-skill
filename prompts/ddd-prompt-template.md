@@ -54,4 +54,19 @@ $DOCUMENTATION_TEMPLATE$
 - If the domain is unclear, state assumptions.
 - Ensure your entire refactoring plan after the analysis is in pure markdown format.
 
+## Update Mode
+
+When an existing document is provided alongside this prompt, you are in **update mode**. Instead of generating the document from scratch:
+
+1. **Read the existing document** carefully, section by section.
+2. **Compare each section** against the current state of the codebase you just analyzed.
+3. **For each section**:
+   - If the content is **still accurate** → preserve it as-is.
+   - If the content is **outdated or incomplete** → rewrite it with up-to-date information.
+   - If the section is **missing entirely** from the existing document → add it following the documentation template.
+   - If the existing document has **extra sections** not in the template → preserve them at the end of the document.
+4. **Output the complete, merged document** — not a diff or patch, but the full updated file.
+
+If no existing document is provided, proceed normally and generate the document from scratch using the template.
+
 Begin your analysis now.

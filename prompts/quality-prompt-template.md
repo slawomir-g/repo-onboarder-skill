@@ -30,6 +30,28 @@ IMPORTANT:
 - Do not be vague. Instead of "Improve error handling", say "The `catch (Exception e)` in `UserService.java` swallows exceptions without logging, hiding potential failures."
 - Prioritize high-impact issues.
 
+## Quantitative Scoring
+
+After your qualitative analysis, assign a **numerical score (1-10)** to each of the five categories listed above. Use this weighted rubric to calculate an overall quality score out of 100:
+
+| Category               | Weight |
+| ---------------------- | ------ |
+| Code Quality & Style   | 25%    |
+| Architecture & Design  | 25%    |
+| Reliability & Security | 20%    |
+| Testability            | 15%    |
+| Maintainability        | 15%    |
+
+**Scoring Guide:**
+
+- **9-10**: Exemplary — industry best practices, no significant issues
+- **7-8**: Good — solid fundamentals, minor improvements possible
+- **5-6**: Acceptable — functional but notable gaps, tech debt accumulating
+- **3-4**: Concerning — significant issues affecting reliability or velocity
+- **1-2**: Critical — fundamental problems requiring immediate attention
+
+Calculate the **weighted total**: multiply each score × weight, sum all, and present as `XX/100`.
+
 ## Output Requirements
 
 After completing your analysis, create the quality assessment report in **pure markdown format**. Your markdown output should follow this structure:
@@ -37,3 +59,18 @@ After completing your analysis, create the quality assessment report in **pure m
 ```markdown
 $DOCUMENTATION_TEMPLATE$
 ```
+
+## Update Mode
+
+When an existing document is provided alongside this prompt, you are in **update mode**. Instead of generating the document from scratch:
+
+1. **Read the existing document** carefully, section by section.
+2. **Compare each section** against the current state of the codebase you just analyzed.
+3. **For each section**:
+   - If the content is **still accurate** → preserve it as-is.
+   - If the content is **outdated or incomplete** → rewrite it with up-to-date information.
+   - If the section is **missing entirely** from the existing document → add it following the documentation template.
+   - If the existing document has **extra sections** not in the template → preserve them at the end of the document.
+4. **Output the complete, merged document** — not a diff or patch, but the full updated file.
+
+If no existing document is provided, proceed normally and generate the document from scratch using the template.
